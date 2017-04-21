@@ -7,4 +7,4 @@ class Task(Model):
     task_description = TextField(max_length=1000)
 
     def __str__(self):
-        return self.task_id
+        return str(self.task_id)

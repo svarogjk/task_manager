@@ -1,0 +1,22 @@
+{% extends "my_tasks/base.html" %}
+
+{% block title %}My tasks{% endblock %}
+
+{% block content %}
+
+    <h1>Мои задачи</h1>
+
+    <table border="1", cellpadding="5">
+    <tr>
+        <th>Номер</th>
+        <th>Описание</th>
+   </tr>
+
+    {% for task in tasks %}
+        <tr>
+            <td>{{task.task_id}} </td>
+            <td>{{task.task_description}} </td>
+        </tr>
+    {% endfor %}
+
+{% endblock %}
