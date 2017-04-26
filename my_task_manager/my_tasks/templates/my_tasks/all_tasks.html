@@ -6,17 +6,49 @@
 
     <h1>Мои задачи</h1>
 
-    <table border="1", cellpadding="5">
-    <tr>
-        <th>Номер</th>
-        <th>Описание</th>
-   </tr>
+    <div>
+        {% csrf_token %}
+        <button id="add"
+        class="btn btn-primary btn-sm" type="button">
+            Добавить
+        </button>
 
-    {% for task in tasks %}
+    </div>
+
+    <div>
+        {% csrf_token %}
+        <button id="edit" data-catid="{{task.task_id}}"
+        class="btn btn-primary btn-sm" type="button">
+            Редактировать
+        </button>
+
+    </div>
+
+    <div>
+        {% csrf_token %}
+        <button id="delete" data-catid="{{task.task_id}}"
+        class="btn btn-primary btn-sm" type="button">
+            Удалить
+        </button>
+
+    </div>
+
+    <div>
+
+       <table border="1", cellpadding="5">
         <tr>
-            <td>{{task.task_id}} </td>
-            <td>{{task.task_description}} </td>
+            <th>Номер</th>
+            <th>Описание</th>
         </tr>
-    {% endfor %}
+
+        {% for task in tasks %}
+            <tr>
+                <td>{{task.task_id}} </td>
+                <td>{{task.task_description}} </td>
+            </tr>
+        {% endfor %}
+       </table>
+
+    </div>
 
 {% endblock %}

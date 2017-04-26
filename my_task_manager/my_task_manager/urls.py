@@ -18,7 +18,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^my_tasks/', include('my_tasks.urls',
+    # url(r'^my_tasks/', include('my_tasks.urls',
+    #                            namespace='my_tasks',
+    #                            app_name='my_tasks')),
+    url(r'', include('my_tasks.urls',
                                namespace='my_tasks',
                                app_name='my_tasks')),
 ]
